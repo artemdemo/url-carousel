@@ -2,7 +2,7 @@
 
 Chrome extension - website change in selected tab
 
-Ready extension will be in `build` folder.
+![alt tag](./source/images/icon128.png)
 
 ### Getting started
 
