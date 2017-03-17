@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -54,6 +55,9 @@ module.exports = {
             root: path.resolve(__dirname, '../../'),
             exclude: ['.gitignore'],
         }),
+        new CopyWebpackPlugin([
+            { from: './source/manifest.json' },
+        ]),
         // I want that popup.html only get popup.js (form it's entry point)
         // https://github.com/jantimon/html-webpack-plugin/issues/218#issuecomment-183066602
         new HtmlWebpackPlugin({
