@@ -17,11 +17,11 @@
             "48": "images/icon48.png"
         },
         "default_title": "URL carousel",
-        "default_popup": "views/popup.html"
+        "default_popup": "popup.html"
     },
     "background": {
         "scripts": [
-            "scripts/background.js"
+            "background.js"
         ]
     }
 }

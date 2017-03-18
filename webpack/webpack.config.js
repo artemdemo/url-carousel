@@ -34,8 +34,8 @@ module.exports = {
                 use: [
                     'style-loader',
                     { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'less-loader'
-                ]
+                    'less-loader',
+                ],
             },
             {test: /\.(png|gif|jpg)(\?.*$|$)/, loader: 'url-loader?limit=100000&name=images/[hash].[ext]'},
             {test: /\.(json)(\?.*$|$)/, loader: 'json-loader'},
@@ -57,6 +57,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             { from: './source/manifest.json' },
+            { from: './source/images/', to: './images' },
         ]),
         // I want that popup.html only get popup.js (form it's entry point)
         // https://github.com/jantimon/html-webpack-plugin/issues/218#issuecomment-183066602

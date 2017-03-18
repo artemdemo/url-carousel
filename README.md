@@ -18,3 +18,8 @@ $ yarn install && yarn start
 ### Chrome extension Documentation
 
 * Manifest File Format - https://developer.chrome.com/extensions/manifest
+
+### Building blocks
+* React
+* Redux
+* React components that implement Google material design - [Material UI](http://www.material-ui.com/)
