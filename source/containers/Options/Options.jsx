@@ -1,19 +1,20 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import ContentBlock from '../../components/ContentBlock/ContentBlock';
 
 import './Options.less';
 
 const Options = () => {
     return (
         <div className='options'>
-            <div>
+            <ContentBlock>
                 <TextField
                     floatingLabelText='Add url to carousel' />
-            </div>
-            <div>
+            </ContentBlock>
+            <ContentBlock>
                 <RaisedButton label='Add' />
-            </div>
+            </ContentBlock>
         </div>
     );
 };
