@@ -1,0 +1,11 @@
+exports[`<ContentBlock> Render empty 1`] = `
+<div
+  className="content-block" />
+`;
+
+exports[`<ContentBlock> Render with content 1`] = `
+<div
+  className="content-block">
+  Some text
+</div>
+`;
