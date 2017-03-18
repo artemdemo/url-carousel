@@ -1,0 +1,25 @@
+exports[`<Form> Render 1`] = `
+<form
+  className={undefined}
+  onSubmit={[Function]}>
+  <input />
+</form>
+`;
+
+exports[`<Form> handle submit 1`] = `
+<Form
+  onSubmit={[Function]}>
+  <form
+    onSubmit={[Function]}>
+    <input />
+  </form>
+</Form>
+`;
+
+exports[`<Form> with className 1`] = `
+<form
+  className="form-class"
+  onSubmit={[Function]}>
+  <input />
+</form>
+`;
