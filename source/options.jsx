@@ -2,13 +2,13 @@ import React from 'react';
 import 'babel-polyfill';
 import { render } from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Popup from './containers/Popup/Popup';
+import Options from './containers/Options/Options';
 
-import './styles/popup-main.less';
+import './styles/options-main.less';
 
 render(
     <MuiThemeProvider>
-        <Popup />
+        <Options />
     </MuiThemeProvider>,
-    document.getElementById('popup'),
+    document.getElementById('options'),
 );

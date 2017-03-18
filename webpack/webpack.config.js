@@ -6,6 +6,7 @@ const path = require('path');
 module.exports = {
     entry: {
         popup: './source/popup.jsx',
+        options: './source/options.jsx',
         background: './source/background.jsx',
     },
     output: {
@@ -59,12 +60,15 @@ module.exports = {
             { from: './source/manifest.json' },
             { from: './source/images/', to: './images' },
         ]),
-        // I want that popup.html only get popup.js (form it's entry point)
-        // https://github.com/jantimon/html-webpack-plugin/issues/218#issuecomment-183066602
         new HtmlWebpackPlugin({
             chunks: ['popup'],
             template: './source/popup.html',
             filename: './popup.html',
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['options'],
+            template: './source/options.html',
+            filename: './options.html',
         }),
     ],
 };

@@ -23,3 +23,5 @@ $ yarn install && yarn start
 * React
 * Redux
 * React components that implement Google material design - [Material UI](http://www.material-ui.com/)
+* Material design - https://material.io/
+    * Material icons - https://material.io/icons/
