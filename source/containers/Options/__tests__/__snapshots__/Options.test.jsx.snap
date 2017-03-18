@@ -1,11 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Options> Render 1`] = `
 <div
-  className="options">
+  className="options"
+>
   <form
     className={undefined}
-    onSubmit={[Function]}>
+    onSubmit={[Function]}
+  >
     <div
-      className="content-block">
+      className="content-block"
+    >
       <div
         className={undefined}
         style={
@@ -22,7 +27,8 @@ exports[`<Options> Render 1`] = `
             "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
             "width": 256,
           }
-        }>
+        }
+      >
         <label
           className={undefined}
           htmlFor="add-url-to-carousel"
@@ -41,7 +47,8 @@ exports[`<Options> Render 1`] = `
               "userSelect": "none",
               "zIndex": 1,
             }
-          }>
+          }
+        >
           Add url to carousel
         </label>
         <input
@@ -70,7 +77,8 @@ exports[`<Options> Render 1`] = `
             }
           }
           type="text"
-          value="" />
+          value=""
+        />
         <div>
           <hr
             style={
@@ -87,7 +95,8 @@ exports[`<Options> Render 1`] = `
                 "position": "absolute",
                 "width": "100%",
               }
-            } />
+            }
+          />
           <hr
             style={
               Object {
@@ -105,12 +114,14 @@ exports[`<Options> Render 1`] = `
                 "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                 "width": "100%",
               }
-            } />
+            }
+          />
         </div>
       </div>
     </div>
     <div
-      className="content-block">
+      className="content-block"
+    >
       <div
         className={undefined}
         style={
@@ -128,7 +139,8 @@ exports[`<Options> Render 1`] = `
             "muiPrepared": true,
             "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
           }
-        }>
+        }
+      >
         <button
           disabled={false}
           href={undefined}
@@ -172,13 +184,15 @@ exports[`<Options> Render 1`] = `
             }
           }
           tabIndex={0}
-          type="button">
+          type="button"
+        >
           <div
             onMouseDown={[Function]}
             onMouseLeave={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
-            onTouchStart={[Function]}>
+            onTouchStart={[Function]}
+          >
             <div
               style={
                 Object {
@@ -189,7 +203,8 @@ exports[`<Options> Render 1`] = `
                   "top": 0,
                   "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
                 }
-              }>
+              }
+            >
               <span
                 style={
                   Object {
@@ -206,7 +221,8 @@ exports[`<Options> Render 1`] = `
                     "textTransform": "uppercase",
                     "userSelect": "none",
                   }
-                }>
+                }
+              >
                 Add
               </span>
             </div>
@@ -215,5 +231,201 @@ exports[`<Options> Render 1`] = `
       </div>
     </div>
   </form>
+  <div
+    style={
+      Object {
+        "muiPrepared": true,
+        "padding": "0px 0px 8px 0px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "color": "rgba(0, 0, 0, 0.54)",
+          "fontSize": 14,
+          "fontWeight": 500,
+          "lineHeight": "48px",
+          "muiPrepared": true,
+          "paddingLeft": 16,
+          "width": "100%",
+        }
+      }
+    >
+      URL List
+    </div>
+    <div>
+      <span
+        disabled={undefined}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onTouchTap={[Function]}
+        open={null}
+        style={
+          Object {
+            "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+            "background": "none",
+            "backgroundColor": null,
+            "border": 10,
+            "boxSizing": "border-box",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "Roboto, sans-serif",
+            "fontSize": 16,
+            "fontWeight": "inherit",
+            "lineHeight": "16px",
+            "margin": 0,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "textDecoration": "none",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "verticalAlign": null,
+            "zIndex": 1,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            style={
+              Object {
+                "marginLeft": 0,
+                "muiPrepared": true,
+                "paddingBottom": 16,
+                "paddingLeft": 16,
+                "paddingRight": 56,
+                "paddingTop": 16,
+                "position": "relative",
+              }
+            }
+          >
+            <div
+              className={undefined}
+              onMouseDown={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchTap={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "muiPrepared": true,
+                  "position": "absolute",
+                  "right": 4,
+                  "top": 0,
+                }
+              }
+            >
+              <button
+                disabled={false}
+                href={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOut={[Function]}
+                onTouchStart={[Function]}
+                onTouchTap={[Function]}
+                style={
+                  Object {
+                    "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                    "background": "none",
+                    "border": 10,
+                    "boxSizing": "border-box",
+                    "cursor": "pointer",
+                    "display": "inline-block",
+                    "fontFamily": "Roboto, sans-serif",
+                    "fontSize": 0,
+                    "fontWeight": "inherit",
+                    "height": 48,
+                    "margin": 0,
+                    "muiPrepared": true,
+                    "outline": "none",
+                    "overflow": "visible",
+                    "padding": 12,
+                    "position": "relative",
+                    "textDecoration": "none",
+                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                    "verticalAlign": null,
+                    "width": 48,
+                    "zIndex": 1,
+                  }
+                }
+                tabIndex={0}
+                type="button"
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <svg
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    style={
+                      Object {
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "inline-block",
+                        "fill": "#bdbdbd",
+                        "height": 24,
+                        "muiPrepared": true,
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "userSelect": "none",
+                        "width": 24,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </div>
+              </button>
+              <div
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                }
+              />
+            </div>
+            <div
+              style={
+                Object {
+                  "muiPrepared": true,
+                }
+              }
+            >
+              http://www.facebook.com
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
 </div>
 `;

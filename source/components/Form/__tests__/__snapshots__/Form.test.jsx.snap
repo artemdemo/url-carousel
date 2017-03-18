@@ -1,16 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Form> Render 1`] = `
 <form
   className={undefined}
-  onSubmit={[Function]}>
+  onSubmit={[Function]}
+>
   <input />
 </form>
 `;
 
 exports[`<Form> handle submit 1`] = `
 <Form
-  onSubmit={[Function]}>
+  onSubmit={[Function]}
+>
   <form
-    onSubmit={[Function]}>
+    onSubmit={[Function]}
+  >
     <input />
   </form>
 </Form>
@@ -19,7 +24,8 @@ exports[`<Form> handle submit 1`] = `
 exports[`<Form> with className 1`] = `
 <form
   className="form-class"
-  onSubmit={[Function]}>
+  onSubmit={[Function]}
+>
   <input />
 </form>
 `;

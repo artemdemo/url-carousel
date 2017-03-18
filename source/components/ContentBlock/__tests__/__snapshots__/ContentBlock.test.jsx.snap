@@ -1,11 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<ContentBlock> Render empty 1`] = `
 <div
-  className="content-block" />
+  className="content-block"
+/>
 `;
 
 exports[`<ContentBlock> Render with content 1`] = `
 <div
-  className="content-block">
+  className="content-block"
+>
   Some text
 </div>
 `;

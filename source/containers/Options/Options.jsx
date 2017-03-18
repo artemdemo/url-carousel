@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Form from '../../components/Form/Form';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
+import UrlList from '../UrlList/UrlList';
 
 import './Options.less';
 
@@ -43,6 +44,7 @@ class Options extends Component {
                             label='Add' />
                     </ContentBlock>
                 </Form>
+                <UrlList />
             </div>
         );
     }
