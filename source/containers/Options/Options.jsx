@@ -15,10 +15,17 @@ class Options extends Component {
         };
     }
 
+    submit() {
+        if (this.state.url === '') {
+            this.setState({urlError: 'Url should not be empty'});
+            return false;
+        }
+    }
+
     render() {
         return (
             <div className='options'>
-                <Form>
+                <Form onSubmit={() => this.submit()}>
                     <ContentBlock>
                         <TextField
                             id='add-url-to-carousel'
@@ -31,7 +38,9 @@ class Options extends Component {
                             errorText={this.state.urlError} />
                     </ContentBlock>
                     <ContentBlock>
-                        <RaisedButton label='Add' />
+                        <RaisedButton
+                            onClick={() => this.submit()}
+                            label='Add' />
                     </ContentBlock>
                 </Form>
             </div>
