@@ -22,7 +22,7 @@ exports[`<Options> Render 1`] = `
       }>
       <label
         className={undefined}
-        htmlFor="undefined-undefined-Addurltocarousel-19991"
+        htmlFor="add-url-to-carousel"
         onTouchTap={undefined}
         style={
           Object {
@@ -43,7 +43,7 @@ exports[`<Options> Render 1`] = `
       </label>
       <input
         disabled={false}
-        id="undefined-undefined-Addurltocarousel-19991"
+        id="add-url-to-carousel"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}

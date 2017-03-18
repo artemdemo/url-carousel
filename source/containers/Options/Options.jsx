@@ -10,6 +10,7 @@ const Options = () => {
         <div className='options'>
             <ContentBlock>
                 <TextField
+                    id='add-url-to-carousel'
                     floatingLabelText='Add url to carousel' />
             </ContentBlock>
             <ContentBlock>
