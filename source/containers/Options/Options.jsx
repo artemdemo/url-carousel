@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import Form from '../../components/Form/Form';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import UrlList from '../UrlList/UrlList';
@@ -28,20 +26,18 @@ class Options extends Component {
             <div className='options'>
                 <Form onSubmit={() => this.submit()}>
                     <ContentBlock>
-                        <TextField
-                            id='add-url-to-carousel'
-                            floatingLabelText='Add url to carousel'
+                        <input
                             value={this.state.url}
                             onChange={e => this.setState({
                                 url: e.target.value,
                                 urlError: false,
                             })}
-                            errorText={this.state.urlError} />
+                            className='form-control'
+                            placeholder='Url' />
                     </ContentBlock>
                     <ContentBlock>
-                        <RaisedButton
-                            onClick={() => this.submit()}
-                            label='Add' />
+                        <button
+                            className='btn btn-default'>Add</button>
                     </ContentBlock>
                 </Form>
                 <UrlList />
