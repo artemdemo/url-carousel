@@ -11,12 +11,18 @@ exports[`<Options> Render 1`] = `
     <div
       className="content-block"
     >
-      <input
-        className="form-control"
-        onChange={[Function]}
-        placeholder="Url"
-        value=""
-      />
+      <div
+        className=""
+      >
+        <input
+          className="form-control"
+          disabled={undefined}
+          onChange={[Function]}
+          placeholder="Url"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       className="content-block"

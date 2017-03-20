@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../../components/Form/Form';
+import Input from '../../components/Input/Input';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import UrlList from '../UrlList/UrlList';
 
@@ -26,13 +27,12 @@ class Options extends Component {
             <div className='options'>
                 <Form onSubmit={() => this.submit()}>
                     <ContentBlock>
-                        <input
+                        <Input
                             value={this.state.url}
                             onChange={e => this.setState({
                                 url: e.target.value,
                                 urlError: false,
                             })}
-                            className='form-control'
                             placeholder='Url' />
                     </ContentBlock>
                     <ContentBlock>
