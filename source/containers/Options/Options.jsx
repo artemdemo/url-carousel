@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Form from '../../components/Form/Form';
 import Input from '../../components/Input/Input';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import UrlList from '../UrlList/UrlList';
+import { addUrl } from '../../model/urlList/urlListActions';
 
 import './Options.less';
 
-class Options extends Component {
+export class Options extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,9 +22,15 @@ class Options extends Component {
             this.setState({urlError: 'Url should not be empty'});
             return false;
         }
+        const { addUrl } = this.props;
+        addUrl(this.state.url);
+        this.setState({
+            url: '',
+        });
     }
 
     render() {
+        const { urlList } = this.props;
         return (
             <div className='options'>
                 <Form onSubmit={() => this.submit()}>
@@ -31,8 +39,9 @@ class Options extends Component {
                             <div className='col-xs-9'>
                                 <Input
                                     value={this.state.url}
-                                    onChange={e => this.setState({
-                                        url: e.target.value,
+                                    error={this.state.urlError}
+                                    onChange={url => this.setState({
+                                        url,
                                         urlError: false,
                                     })}
                                     placeholder='Url' />
@@ -44,10 +53,16 @@ class Options extends Component {
                         </div>
                     </ContentBlock>
                 </Form>
-                <UrlList />
+                <UrlList list={urlList.urls} />
             </div>
         );
     }
 }
 
-export default Options;
+export default connect(
+    state => ({
+        urlList: state.urlList,
+    }), {
+        addUrl,
+    },
+)(Options);

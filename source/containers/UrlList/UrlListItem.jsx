@@ -1,13 +1,17 @@
 import React from 'react';
 
-const UrlListItem = () => {
+const UrlListItem = (props) => {
+    const { item } = props;
     return (
-        <div>http://www.facebook.com</div>
+        <div>{item.url}</div>
     );
 };
 
 UrlListItem.propTypes = {
-    item: React.PropTypes.shape({}),
+    item: React.PropTypes.shape({
+        url: React.PropTypes.string,
+        index: React.PropTypes.number,
+    }),
 };
 
 export default UrlListItem;
