@@ -18,7 +18,7 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
           className="col-xs-9"
         >
           <div
-            className=""
+            className="input-container"
           >
             <input
               className="form-control"

@@ -18,6 +18,7 @@ const Input = (props) => {
     };
 
     const containerClass = classnames({
+        'input-container': true,
         'has-error': Boolean(error),
     });
 
