@@ -8,6 +8,7 @@
         "128": "images/icon128.png"
     },
     "permissions": [
+        "storage",
         "tabs",
         "<all_urls>"
     ],

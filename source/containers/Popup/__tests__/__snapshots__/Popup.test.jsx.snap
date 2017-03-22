@@ -5,15 +5,15 @@ exports[`<Popup> Render 1`] = `
   className="browser-menu"
 >
   <ul
-    className="list-group"
+    className="browser-menu-list"
   >
     <li
-      className="list-group-item"
+      className="browser-menu-list__item"
     >
       Start carousel
     </li>
     <li
-      className="list-group-item"
+      className="browser-menu-list__item"
       onClick={[Function]}
     >
       Settings

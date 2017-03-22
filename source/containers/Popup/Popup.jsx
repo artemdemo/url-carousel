@@ -5,9 +5,9 @@ import './Popup.less';
 const Popup = () => {
     return (
         <div className='browser-menu'>
-            <ul className='list-group'>
-                <li className='list-group-item'>Start carousel</li>
-                <li className='list-group-item'
+            <ul className='browser-menu-list'>
+                <li className='browser-menu-list__item'>Start carousel</li>
+                <li className='browser-menu-list__item'
                     onClick={() => chrome.runtime.openOptionsPage()}>
                     Settings
                 </li>

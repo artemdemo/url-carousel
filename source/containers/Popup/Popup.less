@@ -1,3 +1,24 @@
+@bg-hover: #ebebeb;
+
 .browser-menu {
     width: 250px;
 }
+
+.browser-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    .browser-menu-list__item {
+        padding: 8px 10px;
+        cursor: pointer;
+        border-bottom: 1px solid darken(@bg-hover, 5%);
+
+        &:hover {
+            background-color: @bg-hover;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
