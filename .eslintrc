@@ -1,5 +1,8 @@
 {
     "extends": "artem-react",
+    "globals": {
+        "chrome": true
+    },
     "rules": {
         // We are useing `while (true) {}` in sagas, therefore this check is not working for us
         "no-constant-condition": 0
