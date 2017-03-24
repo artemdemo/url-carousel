@@ -4,7 +4,7 @@ import Form from '../../components/Form/Form';
 import Input from '../../components/Input/Input';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import UrlList from '../UrlList/UrlList';
-import { addUrl } from '../../model/urlList/urlListActions';
+import { loadUrls, addUrl } from '../../model/urlList/urlListActions';
 
 import './Options.less';
 
@@ -15,6 +15,11 @@ export class Options extends Component {
             url: '',
             urlError: false,
         };
+    }
+
+    componentDidMount() {
+        const { loadUrls } = this.props;
+        loadUrls();
     }
 
     submit() {
@@ -63,6 +68,7 @@ export default connect(
     state => ({
         urlList: state.urlList,
     }), {
+        loadUrls,
         addUrl,
     },
 )(Options);

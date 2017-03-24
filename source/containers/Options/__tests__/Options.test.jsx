@@ -6,6 +6,7 @@ describe('<Options>', () => {
     it('Simple render: no list, empty input', () => {
         const tree = renderer.create(
             <Options
+                loadUrls={() => {}}
                 urlList={{
                     urls: [],
                 }} />

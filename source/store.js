@@ -4,6 +4,8 @@ import createSagaMiddleware from 'redux-saga';
 
 import urlList from './model/urlList/urlListReducer';
 
+import urlListSagas from './model/urlList/urlListSagas';
+
 const reducers = combineReducers({
     urlList,
     routing: routerReducer,
@@ -11,7 +13,9 @@ const reducers = combineReducers({
 
 
 function* rootSaga() {
-    yield [];
+    yield [
+        urlListSagas(),
+    ];
 }
 
 const sagaMiddleware = createSagaMiddleware();
