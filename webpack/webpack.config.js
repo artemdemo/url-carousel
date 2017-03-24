@@ -8,6 +8,7 @@ module.exports = {
         popup: './source/popup.jsx',
         options: './source/options.jsx',
         background: './source/background.jsx',
+        carousel: './source/carousel.jsx',
     },
     output: {
         path: `${__dirname}/../build`,
@@ -68,6 +69,11 @@ module.exports = {
             chunks: ['options'],
             template: './source/options.html',
             filename: './options.html',
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ['carousel'],
+            template: './source/carousel.html',
+            filename: './carousel.html',
         }),
     ],
 };
