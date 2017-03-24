@@ -18,10 +18,10 @@
             "48": "images/icon48.png"
         },
         "default_title": "URL carousel",
-        "default_popup": "popup.html"
+        "default_popup": "PopupView.html"
     },
     "options_ui": {
-        "page": "options.html",
+        "page": "OptionsView.html",
         "chrome_style": false
     },
     "background": {

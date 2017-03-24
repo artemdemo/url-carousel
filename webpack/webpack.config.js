@@ -5,10 +5,10 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        popup: './source/popup.jsx',
-        options: './source/options.jsx',
+        popup: './source/views/PopupView/PopupView.jsx',
+        options: './source/views/OptionsView/OptionsView.jsx',
+        carousel: './source/views/carouselView/carouselView.jsx',
         background: './source/background.jsx',
-        carousel: './source/carousel.jsx',
     },
     output: {
         path: `${__dirname}/../build`,
@@ -62,18 +62,18 @@ module.exports = {
         ]),
         new HtmlWebpackPlugin({
             chunks: ['popup'],
-            template: './source/popup.html',
-            filename: './popup.html',
+            template: './source/views/PopupView/PopupView.html',
+            filename: './PopupView.html',
         }),
         new HtmlWebpackPlugin({
             chunks: ['options'],
-            template: './source/options.html',
-            filename: './options.html',
+            template: './source/views/OptionsView/OptionsView.html',
+            filename: './OptionsView.html',
         }),
         new HtmlWebpackPlugin({
             chunks: ['carousel'],
-            template: './source/carousel.html',
-            filename: './carousel.html',
+            template: './source/views/CarouselView/CarouselView.html',
+            filename: './CarouselView.html',
         }),
     ],
 };

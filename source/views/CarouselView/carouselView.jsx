@@ -1,9 +1,9 @@
 import React from 'react';
 import 'babel-polyfill';
 import { render } from 'react-dom';
-import Carousel from './containers/Carousel/Carousel';
+import Carousel from '../../containers/Carousel/Carousel';
 
-import './styles/carousel-main.less';
+import './carouselView.less';
 
 render(
     <Carousel />,

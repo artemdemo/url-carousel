@@ -13,7 +13,7 @@ class Popup extends Component {
     toggleCarousel() {
         if (!this.state.isPlaying) {
             chrome.tabs.create({
-                url: chrome.runtime.getURL('carousel.html'),
+                url: chrome.runtime.getURL('CarouselView.html'),
             }, (tab) => {
                 // Tab opened.
             });
