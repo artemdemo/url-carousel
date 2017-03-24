@@ -35,10 +35,7 @@ export default function urlListReducer(state = initialState, action) {
             return Object.assign({}, state, {adding: true});
         case urlListConst.URL_ADDED:
             return Object.assign({}, state, {
-                urls: [
-                    ...state.urls,
-                    action.url,
-                ],
+                urls: [...action.urls],
                 adding: false,
                 addingError: null,
             });
@@ -54,10 +51,7 @@ export default function urlListReducer(state = initialState, action) {
             return Object.assign({}, state, {deleting: true});
         case urlListConst.URL_DELETED:
             return Object.assign({}, state, {
-                urls: [
-                    ...state.urls.slice(0, action.id),
-                    ...state.urls.slice(action.id + 1),
-                ],
+                urls: [...action.urls],
                 deleting: false,
                 deletingError: null,
             });

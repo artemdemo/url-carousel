@@ -35,10 +35,10 @@ export function addUrl(url) {
     };
 }
 
-export function urlAdded(url) {
+export function urlAdded(urls) {
     return {
         type: urlListConst.URL_ADDED,
-        url,
+        urls,
     };
 }
 
@@ -53,17 +53,17 @@ export function addUrlError(error = true) {
  * Delete
  */
 
-export function deleteUrl(id) {
+export function deleteUrl(index) {
     return {
         type: urlListConst.DELETE_URL,
-        id,
+        index,
     };
 }
 
-export function urlDeleted(id) {
+export function urlDeleted(urls) {
     return {
         type: urlListConst.URL_DELETED,
-        id,
+        urls,
     };
 }
 

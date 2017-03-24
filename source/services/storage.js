@@ -10,10 +10,8 @@ let getTimeoutId;
  * @param data {Object}
  */
 export const set = data => new Promise((resolve, reject) => {
-    console.log('set');
     setTimeoutId = setTimeout(() => reject(), ERROR_TIMEOUT);
     chrome.storage.sync.set(data, () => {
-        console.log(data);
         clearTimeout(setTimeoutId);
         resolve();
     });
@@ -26,7 +24,6 @@ export const set = data => new Promise((resolve, reject) => {
 export const get = keys => new Promise((resolve, reject) => {
     getTimeoutId = setTimeout(() => reject, ERROR_TIMEOUT);
     chrome.storage.sync.get(keys, (items) => {
-        console.log(items);
         clearTimeout(getTimeoutId);
         resolve(items);
     });
