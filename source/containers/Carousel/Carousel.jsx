@@ -64,7 +64,12 @@ class Carousel extends Component {
 
     changeSlide(forward = true) {
         const nextIndex = forward ? this.urlIndex + 1 : this.urlIndex - 1;
-        this.urlIndex = this.urlList[nextIndex] ? nextIndex : 0;
+        this.urlIndex = (() => {
+            if (forward) {
+                return this.urlList[nextIndex] ? nextIndex : 0;
+            }
+            return this.urlList[nextIndex] ? nextIndex : this.urlList.length - 1;
+        })();
         this.setState({
             currentUrl: this.urlList[this.urlIndex],
             progressStyle: {},
