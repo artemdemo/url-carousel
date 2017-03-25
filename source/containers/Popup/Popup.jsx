@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
+import * as tabsService from '../../services/tabs';
 
 import './Popup.less';
 
+let carouselTabId = null;
+
 class Popup extends Component {
     openCarousel() {
-        chrome.tabs.query({active: true}, (tabs) => {
-            let urlCarouselTabActive = null;
-            tabs.forEach((tab) => {
-                if (tab.title === 'Url carousel') {
-                    urlCarouselTabActive = tab.id;
+        Promise.all([
+            tabsService.queryTabs({active: true}),
+            tabsService.queryTabs({active: false}),
+        ]).then((tabsCollection) => {
+            const tabs = [].concat(...tabsCollection);
+            let urlCarouselTabActive = false;
+            for (const tab of tabs) {
+                if (tab.id === carouselTabId) {
+                    urlCarouselTabActive = true;
+                    break;
                 }
-            });
+            }
             if (!urlCarouselTabActive) {
-                chrome.tabs.create({
+                tabsService.createTab({
                     url: chrome.runtime.getURL('CarouselView.html'),
-                }, (tab) => {});
+                    active: false,
+                }).then((tab) => {
+                    carouselTabId = tab.id;
+                });
             }
         });
     }
