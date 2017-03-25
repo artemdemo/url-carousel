@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Controllers from './Controllers/Controllers';
 import { loadUrls } from '../../model/urlList/urlListActions';
 
 import './Carousel.less';
@@ -19,6 +20,7 @@ class Carousel extends Component {
         };
         this.urlIndex = 0;
         this.urlList = [];
+        this.intervalId = null;
     }
 
     componentDidMount() {
@@ -35,27 +37,43 @@ class Carousel extends Component {
             this.setState({
                 currentUrl: nextProps.urlList.urls[this.urlIndex],
             });
-            setInterval(
-                () => {
-                    this.urlIndex = this.urlList[this.urlIndex + 1] ?
-                        this.urlIndex + 1 :
-                        0;
-                    this.setState({
-                        currentUrl: this.urlList[this.urlIndex],
-                        progressStyle: {},
-                    });
-                    setTimeout(() => {
-                        this.setState({
-                            progressStyle: PROGRESS_STYLE,
-                        });
-                    }, 100);
-                },
-                INTERVAL_TIMEOUT,
-            );
+            this.runInterval();
+        }
+
+        if (this.props.status.isPlaying !== nextProps.status.isPlaying) {
+            if (!nextProps.status.isPlaying) {
+                clearInterval(this.intervalId);
+                this.setState({
+                    progressStyle: {},
+                });
+            } else {
+                this.runInterval();
+            }
+        }
+    }
+
+    runInterval() {
+        this.intervalId = setInterval(
+            () => this.changeSlide(),
+            INTERVAL_TIMEOUT,
+        );
+        this.setState({
+            progressStyle: PROGRESS_STYLE,
+        });
+    }
+
+    changeSlide(forward = true) {
+        const nextIndex = forward ? this.urlIndex + 1 : this.urlIndex - 1;
+        this.urlIndex = this.urlList[nextIndex] ? nextIndex : 0;
+        this.setState({
+            currentUrl: this.urlList[this.urlIndex],
+            progressStyle: {},
+        });
+        setTimeout(() => {
             this.setState({
                 progressStyle: PROGRESS_STYLE,
             });
-        }
+        }, 100);
     }
 
     render() {
@@ -63,7 +81,9 @@ class Carousel extends Component {
             <div className='url-carousel'>
                 <div className='url-carousel__progress'
                      style={this.state.progressStyle} />
-                <iframe className='url-carousel__iframe' src={this.state.currentUrl} />
+                <Controllers>
+                    <iframe className='url-carousel__iframe' src={this.state.currentUrl} />
+                </Controllers>
             </div>
         );
     }
@@ -72,6 +92,7 @@ class Carousel extends Component {
 export default connect(
     state => ({
         urlList: state.urlList,
+        status: state.status,
     }),
     {
         loadUrls,

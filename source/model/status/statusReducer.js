@@ -1,16 +1,16 @@
 import * as statusConst from './statusConstants';
 
 const initialState = {
-    isPlaying: false,
+    isPlaying: true,
 };
 
 export default function statusReducer(state = initialState, action) {
     switch (action.type) {
-        case statusConst.URLS_STARTED_PLAYING:
+        case statusConst.PLAY_URLS:
             return Object.assign({}, state, {
                 isPlaying: true,
             });
-        case statusConst.URLS_STOPPED:
+        case statusConst.STOP_URLS:
             return Object.assign({}, state, {
                 isPlaying: false,
             });

@@ -1,0 +1,44 @@
+.controllers-container {
+    width: 100%;
+    height: 100%;
+}
+    .controllers-container__mouse-events {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+.controllers {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    top: -60px;
+    right: 10px;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+
+    &:hover {
+        background-color: white;
+    }
+}
+    .controllers_visible {
+        opacity: 1;
+        top: 10px;
+    }
+    .controllers__item {
+        padding: 0 5px;
+        display: inline-block;
+        cursor: pointer;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
