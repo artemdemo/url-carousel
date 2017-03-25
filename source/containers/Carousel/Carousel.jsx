@@ -81,7 +81,11 @@ class Carousel extends Component {
             <div className='url-carousel'>
                 <div className='url-carousel__progress'
                      style={this.state.progressStyle} />
-                <Controllers>
+                <Controllers onSlideChange={(forward) => {
+                    clearInterval(this.intervalId);
+                    this.runInterval();
+                    this.changeSlide(forward);
+                }}>
                     <iframe className='url-carousel__iframe' src={this.state.currentUrl} />
                 </Controllers>
             </div>

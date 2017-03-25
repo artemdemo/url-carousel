@@ -42,14 +42,15 @@ class Controllers extends Component {
     }
 
     hideControllersTimeout() {
-        clearTimeout(this.visibleTimeOut);
-        this.visibleTimeOut = setTimeout(() => {
+        clearTimeout(this.visibleTimeoutId);
+        this.visibleTimeoutId = setTimeout(() => {
             this.setState({visible: false});
-            this.visibleTimeOut = null;
+            this.visibleTimeoutId = null;
         }, 5000);
     }
 
     render() {
+        const { onSlideChange } = this.props;
         const controllersClass = classnames({
             controllers: true,
             controllers_visible: this.state.visible,
@@ -64,13 +65,15 @@ class Controllers extends Component {
                          this.hideControllersTimeout();
                      }, 80)} />
                 <div className={controllersClass}
-                     onMouseEnter={() => clearTimeout(this.visibleTimeOut)}
+                     onMouseEnter={() => clearTimeout(this.visibleTimeoutId)}
                      onMouseLeave={() => this.hideControllersTimeout()}>
-                    <div className='controllers__item'>
+                    <div className='controllers__item'
+                         onClick={() => onSlideChange && onSlideChange(false)}>
                         <span className='glyphicon glyphicon-step-backward' />
                     </div>
                     {this.playToggle()}
-                    <div className='controllers__item'>
+                    <div className='controllers__item'
+                         onClick={() => onSlideChange && onSlideChange(true)}>
                         <span className='glyphicon glyphicon-step-forward' />
                     </div>
                 </div>
@@ -78,6 +81,10 @@ class Controllers extends Component {
         );
     }
 }
+
+Controllers.propTypes = {
+    onSlideChange: React.PropTypes.func,
+};
 
 export default connect(
     state => ({
