@@ -11,7 +11,7 @@ exports[`<Popup> Render 1`] = `
       className="browser-menu-list__item"
       onClick={[Function]}
     >
-      Start carousel
+      Open carousel
     </li>
     <li
       className="browser-menu-list__item"

@@ -19,7 +19,6 @@ class Carousel extends Component {
         };
         this.urlIndex = 0;
         this.urlList = [];
-        this.iframeEl = null;
     }
 
     componentDidMount() {
