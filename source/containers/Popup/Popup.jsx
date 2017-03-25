@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as tabsService from '../../services/tabs';
+import * as messagesService from '../../services/messages';
 
 import './Popup.less';
 
-let carouselTabId = null;
-
-class Popup extends Component {
-    openCarousel() {
+const Popup = () => {
+    const openCarousel = () => {
         Promise.all([
             tabsService.queryTabs({active: true}),
             tabsService.queryTabs({active: false}),
-        ]).then((tabsCollection) => {
-            const tabs = [].concat(...tabsCollection);
+            messagesService.getTabId(),
+        ]).then((results) => {
+            const tabs = [].concat(results[0], results[1]);
+            const carouselTabId = results[2];
             let urlCarouselTabActive = false;
             for (const tab of tabs) {
                 if (tab.id === carouselTabId) {
@@ -22,30 +23,29 @@ class Popup extends Component {
             if (!urlCarouselTabActive) {
                 tabsService.createTab({
                     url: chrome.runtime.getURL('CarouselView.html'),
-                    active: false,
                 }).then((tab) => {
-                    carouselTabId = tab.id;
+                    messagesService.setTabId(tab.id);
                 });
+            } else {
+                tabsService.updateTab(carouselTabId, {active: true});
             }
         });
-    }
+    };
 
-    render() {
-        return (
-            <div className='browser-menu'>
-                <ul className='browser-menu-list'>
-                    <li className='browser-menu-list__item'
-                        onClick={() => this.openCarousel()}>
-                        Open carousel
-                    </li>
-                    <li className='browser-menu-list__item'
-                        onClick={() => chrome.runtime.openOptionsPage()}>
-                        Settings
-                    </li>
-                </ul>
-            </div>
-        );
-    }
-}
+    return (
+        <div className='browser-menu'>
+            <ul className='browser-menu-list'>
+                <li className='browser-menu-list__item'
+                    onClick={() => openCarousel()}>
+                    Open carousel
+                </li>
+                <li className='browser-menu-list__item'
+                    onClick={() => chrome.runtime.openOptionsPage()}>
+                    Settings
+                </li>
+            </ul>
+        </div>
+    );
+};
 
 export default Popup;
