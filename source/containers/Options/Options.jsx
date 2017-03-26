@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Form from '../../components/Form/Form';
 import Input from '../../components/Input/Input';
+import Dropdown from '../../components/Dropdown/Dropdown';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import UrlList from '../UrlList/UrlList';
 import { loadUrls, addUrl } from '../../model/urlList/urlListActions';
 
 import './Options.less';
 
+const TIMEOUTS_LIST = ['5000', '7000', '10000'];
+
 export class Options extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timeout: '',
+            timeout: 0,
             timeoutError: false,
             url: '',
             urlError: false,
@@ -50,18 +53,13 @@ export class Options extends Component {
                 <ContentBlock>
                     <Form className='row' onSubmit={() => this.submitTimeout()}>
                         <div className='col-xs-9'>
-                            <Input
-                                value={this.state.timeout}
-                                error={this.state.timeoutError}
+                            <Dropdown
+                                list={TIMEOUTS_LIST}
                                 onChange={timeout => this.setState({
                                     timeout,
-                                    timeoutError: false,
                                 })}
+                                value={String(this.state.timeout)}
                                 placeholder='Timeout' />
-                        </div>
-                        <div className='col-xs-3'>
-                            <button
-                                className='btn btn-default'>Set</button>
                         </div>
                     </Form>
                     <hr />

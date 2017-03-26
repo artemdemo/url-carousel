@@ -15,26 +15,40 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
         className="col-xs-9"
       >
         <div
-          className="input-container"
+          className=""
         >
-          <input
+          <select
             className="form-control"
             disabled={undefined}
             onChange={[Function]}
-            placeholder="Timeout"
-            type="text"
-            value=""
-          />
+            value="0"
+          >
+            <option
+              disabled={true}
+              value={-1}
+            >
+              Timeout
+            </option>
+            <option
+              disabled={false}
+              value={0}
+            >
+              5000
+            </option>
+            <option
+              disabled={false}
+              value={1}
+            >
+              7000
+            </option>
+            <option
+              disabled={false}
+              value={2}
+            >
+              10000
+            </option>
+          </select>
         </div>
-      </div>
-      <div
-        className="col-xs-3"
-      >
-        <button
-          className="btn btn-default"
-        >
-          Set
-        </button>
       </div>
     </form>
     <hr />
