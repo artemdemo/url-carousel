@@ -12,6 +12,8 @@ export class Options extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            timeout: '',
+            timeoutError: false,
             url: '',
             urlError: false,
         };
@@ -22,10 +24,10 @@ export class Options extends Component {
         loadUrls();
     }
 
-    submit() {
+    submitUrl() {
         if (this.state.url === '') {
             this.setState({urlError: 'Url should not be empty'});
-            return false;
+            return;
         }
         const { addUrl } = this.props;
         addUrl(this.state.url);
@@ -34,30 +36,52 @@ export class Options extends Component {
         });
     }
 
+    submitTimeout() {
+        if (this.state.timeout === '') {
+            this.setState({timeoutError: 'Timeout should not be empty'});
+            return;
+        }
+    }
+
     render() {
         const { urlList } = this.props;
         return (
             <div className='options'>
-                <Form onSubmit={() => this.submit()}>
-                    <ContentBlock>
-                        <div className='row'>
-                            <div className='col-xs-9'>
-                                <Input
-                                    value={this.state.url}
-                                    error={this.state.urlError}
-                                    onChange={url => this.setState({
-                                        url,
-                                        urlError: false,
-                                    })}
-                                    placeholder='Url' />
-                            </div>
-                            <div className='col-xs-3'>
-                                <button
-                                    className='btn btn-default'>Add</button>
-                            </div>
+                <ContentBlock>
+                    <Form className='row' onSubmit={() => this.submitTimeout()}>
+                        <div className='col-xs-9'>
+                            <Input
+                                value={this.state.timeout}
+                                error={this.state.timeoutError}
+                                onChange={timeout => this.setState({
+                                    timeout,
+                                    timeoutError: false,
+                                })}
+                                placeholder='Timeout' />
                         </div>
-                    </ContentBlock>
-                </Form>
+                        <div className='col-xs-3'>
+                            <button
+                                className='btn btn-default'>Set</button>
+                        </div>
+                    </Form>
+                    <hr />
+                    <Form className='row' onSubmit={() => this.submitUrl()}>
+                        <div className='col-xs-9'>
+                            <Input
+                                value={this.state.url}
+                                error={this.state.urlError}
+                                onChange={url => this.setState({
+                                    url,
+                                    urlError: false,
+                                })}
+                                placeholder='Url' />
+                        </div>
+                        <div className='col-xs-3'>
+                            <button
+                                className='btn btn-default'>Add</button>
+                        </div>
+                    </Form>
+                </ContentBlock>
                 <UrlList list={urlList.urls} />
             </div>
         );

@@ -9,7 +9,7 @@ const Input = (props) => {
     const renderErrorText = () => {
         if (typeof error === 'string' && error !== '') {
             return (
-                <div className='input-error text-danger'>
+                <div className='input-error'>
                     {error}
                 </div>
             );
