@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input> Disabled 1`] = `
+<div
+  className="input-container"
+>
+  <input
+    className="form-control"
+    disabled={true}
+    onChange={[Function]}
+    placeholder="Some placeholder"
+    type="text"
+    value={undefined}
+  />
+</div>
+`;
+
+exports[`<Input> Error boolean 1`] = `
+<div
+  className="input-container has-error"
+>
+  <input
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    placeholder="Some placeholder"
+    type="text"
+    value={undefined}
+  />
+</div>
+`;
+
+exports[`<Input> Error text 1`] = `
+<div
+  className="input-container has-error"
+>
+  <input
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    placeholder="Some placeholder"
+    type="text"
+    value={undefined}
+  />
+  <div
+    className="input-error"
+  >
+    Some error
+  </div>
+</div>
+`;
+
+exports[`<Input> Render empty 1`] = `
+<div
+  className="input-container"
+>
+  <input
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    placeholder={undefined}
+    type="text"
+    value={undefined}
+  />
+</div>
+`;
+
+exports[`<Input> Set value 1`] = `
+<Input
+  onChange={[Function]}
+  placeholder="Some placeholder"
+  value=""
+>
+  <div
+    className="input-container"
+  >
+    <input
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Some placeholder"
+      type="text"
+      value=""
+    />
+  </div>
+</Input>
+`;
+
+exports[`<Input> With placeholder 1`] = `
+<div
+  className="input-container"
+>
+  <input
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    placeholder="Some placeholder"
+    type="text"
+    value={undefined}
+  />
+</div>
+`;
