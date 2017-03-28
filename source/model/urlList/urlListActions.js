@@ -25,6 +25,30 @@ export function urlsLoadingError(error = true) {
 }
 
 /*
+ * Save
+ */
+
+export function saveUrls(urls) {
+    return {
+        type: urlListConst.SAVE_URLS,
+        urls,
+    };
+}
+
+export function urlsSaved() {
+    return {
+        type: urlListConst.URLS_SAVED,
+    };
+}
+
+export function urlsSavingError(error = true) {
+    return {
+        type: urlListConst.URLS_SAVING_ERROR,
+        error,
+    };
+}
+
+/*
  * Add
  */
 
@@ -32,20 +56,6 @@ export function addUrl(url) {
     return {
         type: urlListConst.ADD_URL,
         url,
-    };
-}
-
-export function urlAdded(urls) {
-    return {
-        type: urlListConst.URL_ADDED,
-        urls,
-    };
-}
-
-export function addUrlError(error = true) {
-    return {
-        type: urlListConst.ADD_URL_ERROR,
-        error,
     };
 }
 
@@ -57,19 +67,5 @@ export function deleteUrl(index) {
     return {
         type: urlListConst.DELETE_URL,
         index,
-    };
-}
-
-export function urlDeleted(urls) {
-    return {
-        type: urlListConst.URL_DELETED,
-        urls,
-    };
-}
-
-export function deleteUrlError(error = true) {
-    return {
-        type: urlListConst.DELETE_URL_ERROR,
-        error,
     };
 }

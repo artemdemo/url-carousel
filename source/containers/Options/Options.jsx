@@ -80,7 +80,10 @@ export class Options extends Component {
                         </div>
                     </Form>
                 </ContentBlock>
-                <UrlList list={urlList.urls} />
+                <ContentBlock>
+                    <UrlList list={urlList.urls} />
+                </ContentBlock>
+                <button className='btn btn-primary'>Save</button>
             </div>
         );
     }

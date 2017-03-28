@@ -4,10 +4,6 @@ const initialState = {
     urls: [],
     loading: false,
     loadingError: null,
-    adding: false,
-    addingError: null,
-    deleting: false,
-    deletingError: null,
 };
 
 export default function urlListReducer(state = initialState, action) {
@@ -32,33 +28,27 @@ export default function urlListReducer(state = initialState, action) {
          * Add
          */
         case urlListConst.ADD_URL:
-            return Object.assign({}, state, {adding: true});
-        case urlListConst.URL_ADDED:
             return Object.assign({}, state, {
-                urls: [...action.urls],
-                adding: false,
-                addingError: null,
-            });
-        case urlListConst.ADD_URL_ERROR:
-            return Object.assign({}, state, {
-                adding: false,
-                addingError: action.error,
+                urls: [
+                    ...state.urls,
+                    action.url,
+                ],
             });
         /*
          * Delete
          */
         case urlListConst.DELETE_URL:
-            return Object.assign({}, state, {deleting: true});
-        case urlListConst.URL_DELETED:
+            const urls = (() => {
+                if (state.urls.length > action.index) {
+                    return [
+                        ...state.urls.slice(0, action.index),
+                        ...state.urls.slice(action.index + 1),
+                    ];
+                }
+                return [...state.urls];
+            })();
             return Object.assign({}, state, {
-                urls: [...action.urls],
-                deleting: false,
-                deletingError: null,
-            });
-        case urlListConst.DELETE_URL_ERROR:
-            return Object.assign({}, state, {
-                deleting: false,
-                deletingError: action.error,
+                urls,
             });
         default:
             return state;
