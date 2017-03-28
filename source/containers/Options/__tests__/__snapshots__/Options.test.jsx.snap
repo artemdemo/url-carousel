@@ -83,10 +83,19 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
       </div>
     </form>
   </div>
-  <div>
-    <h4>
-      URL List
-    </h4>
+  <div
+    className="content-block"
+  >
+    <div>
+      <h4>
+        URL List
+      </h4>
+    </div>
   </div>
+  <button
+    className="btn btn-primary"
+  >
+    Save
+  </button>
 </div>
 `;
