@@ -4,8 +4,10 @@ import Form from '../../components/Form/Form';
 import Input from '../../components/Input/Input';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
+import StorageController from '../../controllers/StorageController';
 import UrlList from '../UrlList/UrlList';
-import { loadUrls, addUrl } from '../../model/urlList/urlListActions';
+import { addUrl } from '../../model/urlList/urlListActions';
+import { loadData } from '../../model/storage/storageActions';
 
 import './Options.less';
 
@@ -23,8 +25,8 @@ export class Options extends Component {
     }
 
     componentDidMount() {
-        const { loadUrls } = this.props;
-        loadUrls();
+        const { loadData } = this.props;
+        loadData();
     }
 
     submitUrl() {
@@ -50,6 +52,7 @@ export class Options extends Component {
         const { urlList } = this.props;
         return (
             <div className='options'>
+                <StorageController />
                 <ContentBlock>
                     <Form className='row' onSubmit={() => this.submitTimeout()}>
                         <div className='col-xs-9'>
@@ -93,7 +96,7 @@ export default connect(
     state => ({
         urlList: state.urlList,
     }), {
-        loadUrls,
+        loadData,
         addUrl,
     },
 )(Options);
