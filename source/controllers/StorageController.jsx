@@ -8,7 +8,6 @@ import {
 class StorageController extends Component {
     componentWillReceiveProps(nextProps) {
         const { urlsLoaded } = nextProps;
-        console.log(nextProps.storage.data);
         if (this.props.storage.loading === true && nextProps.storage.loading === false) {
             urlsLoaded(nextProps.storage.data.urls);
         }

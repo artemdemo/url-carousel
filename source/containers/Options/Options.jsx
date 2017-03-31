@@ -7,7 +7,7 @@ import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import StorageController from '../../controllers/StorageController';
 import UrlList from '../UrlList/UrlList';
 import { addUrl } from '../../model/urlList/urlListActions';
-import { loadData } from '../../model/storage/storageActions';
+import { loadData, saveData } from '../../model/storage/storageActions';
 
 import './Options.less';
 
@@ -17,8 +17,7 @@ export class Options extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timeout: 0,
-            timeoutError: false,
+            timeoutIndex: 0,
             url: '',
             urlError: false,
         };
@@ -27,6 +26,17 @@ export class Options extends Component {
     componentDidMount() {
         const { loadData } = this.props;
         loadData();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.storage.data.timeout !== nextProps.storage.data.timeout) {
+            this.setState({
+                timeoutIndex: (() => {
+                    const newTimeoutIndex = TIMEOUTS_LIST.indexOf(nextProps.storage.data.timeout);
+                    return newTimeoutIndex !== -1 ? newTimeoutIndex : 0;
+                })(),
+            });
+        }
     }
 
     submitUrl() {
@@ -41,11 +51,12 @@ export class Options extends Component {
         });
     }
 
-    submitTimeout() {
-        if (this.state.timeout === '') {
-            this.setState({timeoutError: 'Timeout should not be empty'});
-            return;
-        }
+    saveOptions() {
+        const { urlList, saveData } = this.props;
+        saveData({
+            urls: urlList.urls,
+            timeout: TIMEOUTS_LIST[this.state.timeoutIndex],
+        });
     }
 
     render() {
@@ -54,19 +65,21 @@ export class Options extends Component {
             <div className='options'>
                 <StorageController />
                 <ContentBlock>
-                    <Form className='row' onSubmit={() => this.submitTimeout()}>
+                    <div className='row'>
                         <div className='col-xs-9'>
                             <Dropdown
                                 list={TIMEOUTS_LIST}
-                                onChange={timeout => this.setState({
-                                    timeout,
+                                onChange={timeoutIndex => this.setState({
+                                    timeoutIndex,
                                 })}
-                                value={String(this.state.timeout)}
+                                value={String(this.state.timeoutIndex)}
                                 placeholder='Timeout' />
                         </div>
-                    </Form>
+                    </div>
                     <hr />
-                    <Form className='row' onSubmit={() => this.submitUrl()}>
+                    <Form
+                        className='row'
+                        onSubmit={() => this.submitUrl()}>
                         <div className='col-xs-9'>
                             <Input
                                 value={this.state.url}
@@ -86,7 +99,11 @@ export class Options extends Component {
                 <ContentBlock>
                     <UrlList list={urlList.urls} />
                 </ContentBlock>
-                <button className='btn btn-primary'>Save</button>
+                <button
+                    className='btn btn-primary'
+                    onClick={() => this.saveOptions()}>
+                    Save
+                </button>
             </div>
         );
     }
@@ -95,8 +112,10 @@ export class Options extends Component {
 export default connect(
     state => ({
         urlList: state.urlList,
+        storage: state.storage,
     }), {
         loadData,
+        saveData,
         addUrl,
     },
 )(Options);

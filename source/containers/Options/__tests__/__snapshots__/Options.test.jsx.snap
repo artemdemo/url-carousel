@@ -7,9 +7,8 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
   <div
     className="content-block"
   >
-    <form
+    <div
       className="row"
-      onSubmit={[Function]}
     >
       <div
         className="col-xs-9"
@@ -50,7 +49,7 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
           </select>
         </div>
       </div>
-    </form>
+    </div>
     <hr />
     <form
       className="row"
@@ -94,6 +93,7 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
   </div>
   <button
     className="btn btn-primary"
+    onClick={[Function]}
   >
     Save
   </button>

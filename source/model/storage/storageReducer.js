@@ -1,7 +1,10 @@
 import * as storageConst from './storageConstants';
 
 const initialState = {
-    data: {},
+    data: {
+        timeout: null,
+        urls: [],
+    },
     loading: false,
     loadingError: null,
     saving: false,
