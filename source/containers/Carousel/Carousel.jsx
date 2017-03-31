@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Controllers from './Controllers/Controllers';
-import { loadUrls } from '../../model/urlList/urlListActions';
+import { loadData } from '../../model/storage/storageActions';
+import StorageController from '../../controllers/StorageController';
 
 import './Carousel.less';
 
@@ -24,8 +25,8 @@ class Carousel extends Component {
     }
 
     componentDidMount() {
-        const { loadUrls } = this.props;
-        loadUrls();
+        const { loadData } = this.props;
+        loadData();
     }
 
     componentWillReceiveProps(nextProps) {
@@ -84,6 +85,7 @@ class Carousel extends Component {
     render() {
         return (
             <div className='url-carousel'>
+                <StorageController />
                 <div className='url-carousel__progress'
                      style={this.state.progressStyle} />
                 <Controllers onSlideChange={(forward) => {
@@ -104,6 +106,6 @@ export default connect(
         status: state.status,
     }),
     {
-        loadUrls,
+        loadData,
     },
 )(Carousel);
