@@ -95,7 +95,7 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
     className="elements-list"
   >
     <button
-      className="btn btn-primary elements-list-item elements-list-item_first"
+      className="elements-list-item elements-list-item_first btn btn-primary"
       onClick={[Function]}
     >
       Save

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> Simple render with text 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+>
+  button name
+</button>
+`;
+
+exports[`<Button> With className 1`] = `
+<button
+  className="additional-class btn"
+  onClick={[Function]}
+>
+  button name
+</button>
+`;
+
+exports[`<Button> With className and "primary" 1`] = `
+<button
+  className="additional-class btn btn-primary"
+  onClick={[Function]}
+>
+  button name
+</button>
+`;
