@@ -41,6 +41,22 @@ export default function urlListReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 urls,
             });
+        /*
+         * Move
+         */
+        case urlListConst.MOVE_URL:
+            const url = state.urls[action.previousIndex];
+            const updatedList = [
+                ...state.urls.slice(0, action.previousIndex),
+                ...state.urls.slice(action.previousIndex + 1),
+            ];
+            return Object.assign({}, state, {
+                urls: [
+                    ...updatedList.slice(0, action.nextIndex),
+                    url,
+                    ...updatedList.slice(action.nextIndex),
+                ],
+            });
         default:
             return state;
     }

@@ -10,9 +10,15 @@
     }
     &:hover {
         background-color: @bg-hover;
+
+        .url-list-item-move-buttons {
+            display: block;
+        }
+        .url-list-item__remove {
+            display: inline-block;
+        }
     }
 }
-
     .url-list-item__text {
         flex-grow: 1;
         max-width: 500px;
@@ -22,5 +28,16 @@
     }
     .url-list-item__remove {
         cursor: pointer;
+        display: none;
         color: #ff8a8a;
+    }
+
+.url-list-item-move-buttons {
+    margin-right: 5px;
+    display: none;
+}
+    .url-list-item-move-buttons__item {
+        cursor: pointer;
+        color: #349c1c;
+        display: inline-block;
     }

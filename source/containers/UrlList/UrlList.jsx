@@ -12,6 +12,7 @@ const UrlList = (props) => {
                         url,
                         index,
                     }}
+                    totalUrlsAmount={list.length}
                     key={`url-list-item-${index}`} />
             ))}
         </div>
