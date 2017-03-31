@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon> Simple render 1`] = `
+<span
+  className="icon"
+>
+  <i
+    className="glyphicon glyphicon-ok"
+  />
+</span>
+`;
+
+exports[`<Icon> With className 1`] = `
+<span
+  className="additional-class icon"
+>
+  <i
+    className="glyphicon glyphicon-remove"
+  />
+</span>
+`;
+
+exports[`<Icon> flat 1`] = `
+<span
+  className="icon icon_flat"
+>
+  <i
+    className="glyphicon glyphicon-remove"
+  />
+</span>
+`;

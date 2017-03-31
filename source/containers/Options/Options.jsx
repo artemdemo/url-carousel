@@ -6,6 +6,7 @@ import Dropdown from '../../components/Dropdown/Dropdown';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
 import ElementsList from '../../components/ElementsList/ElementsList';
 import Button from '../../components/Button/Button';
+import Icon from '../../components/Icon/Icon';
 import StorageController from '../../controllers/StorageController';
 import UrlList from '../UrlList/UrlList';
 import { addUrl } from '../../model/urlList/urlListActions';
@@ -22,6 +23,7 @@ export class Options extends Component {
             timeoutIndex: 0,
             url: '',
             urlError: false,
+            saved: false,
         };
     }
 
@@ -37,6 +39,12 @@ export class Options extends Component {
                     const newTimeoutIndex = TIMEOUTS_LIST.indexOf(nextProps.storage.data.timeout);
                     return newTimeoutIndex !== -1 ? newTimeoutIndex : 0;
                 })(),
+            });
+        }
+
+        if (this.props.storage.saving === true && nextProps.storage.saving === false) {
+            this.setState({
+                saved: true,
             });
         }
     }
@@ -59,6 +67,19 @@ export class Options extends Component {
             urls: urlList.urls,
             timeout: TIMEOUTS_LIST[this.state.timeoutIndex],
         });
+    }
+
+    renderSaved() {
+        if (this.state.saved) {
+            setTimeout(() => this.setState({saved: false}), 2000);
+            return (
+                <span className='text-success'>
+                    <Icon name='ok' />
+                    Saved
+                </span>
+            );
+        }
+        return null;
     }
 
     render() {
@@ -107,7 +128,7 @@ export class Options extends Component {
                         primary >
                         Save
                     </Button>
-                    <span>Saved</span>
+                    {this.renderSaved()}
                 </ElementsList>
             </div>
         );

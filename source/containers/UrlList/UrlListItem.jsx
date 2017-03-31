@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteUrl } from '../../model/urlList/urlListActions';
+import Icon from '../../components/Icon/Icon';
 
 import './UrlListItem.less';
 
@@ -15,7 +16,7 @@ const UrlListItem = (props) => {
                  onClick={() => {
                      deleteUrl(item.index);
                  }}>
-                <i className='glyphicon glyphicon-remove' />
+                <Icon name='remove' flat />
             </div>
         </div>
     );

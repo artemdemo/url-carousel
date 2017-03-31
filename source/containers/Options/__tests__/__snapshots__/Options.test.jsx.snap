@@ -100,11 +100,6 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
     >
       Save
     </button>
-    <span
-      className="elements-list-item elements-list-item_last"
-    >
-      Saved
-    </span>
   </div>
 </div>
 `;
