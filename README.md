@@ -1,6 +1,8 @@
 ## URL carousel
 
-Chrome extension - website change in selected tab
+Simple extension that showing websites them one by one in single tab.
+Useful when you want to use chrome cast of only one tab.
+For example, after locking your computer chrome cast will stop casting of whole desktop, but will continue to stream single tab. 
 
 ![alt tag](./source/images/icon128.png)
 
@@ -22,6 +24,4 @@ $ yarn install && yarn start
 ### Building blocks
 * React
 * Redux
-* React components that implement Google material design - [Material UI](http://www.material-ui.com/)
-* Material design - https://material.io/
-    * Material icons - https://material.io/icons/
+* Bootsrap CSS
