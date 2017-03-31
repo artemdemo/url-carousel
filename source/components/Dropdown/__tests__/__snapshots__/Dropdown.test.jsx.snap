@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown /> Array of strings 1`] = `
+<div
+  className=""
+>
+  <select
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    value={undefined}
+  >
+    <option
+      disabled={undefined}
+      value={0}
+    >
+      one
+    </option>
+    <option
+      disabled={undefined}
+      value={1}
+    >
+      two
+    </option>
+    <option
+      disabled={undefined}
+      value={2}
+    >
+      three
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Dropdown /> Disabled 1`] = `
+<div
+  className=""
+>
+  <select
+    className="form-control"
+    disabled={true}
+    onChange={[Function]}
+    value={undefined}
+  >
+    <option
+      disabled={undefined}
+      value={0}
+    >
+      one
+    </option>
+    <option
+      disabled={undefined}
+      value={1}
+    >
+      two
+    </option>
+    <option
+      disabled={undefined}
+      value={2}
+    >
+      three
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Dropdown /> Error 1`] = `
+<div
+  className="has-error"
+>
+  <select
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    value={undefined}
+  >
+    <option
+      disabled={undefined}
+      value={0}
+    >
+      one
+    </option>
+    <option
+      disabled={undefined}
+      value={1}
+    >
+      two
+    </option>
+    <option
+      disabled={undefined}
+      value={2}
+    >
+      three
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Dropdown /> Error and text 1`] = `
+<div
+  className="has-error"
+>
+  <select
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    value={undefined}
+  >
+    <option
+      disabled={undefined}
+      value={0}
+    >
+      one
+    </option>
+    <option
+      disabled={undefined}
+      value={1}
+    >
+      two
+    </option>
+    <option
+      disabled={undefined}
+      value={2}
+    >
+      three
+    </option>
+  </select>
+  <div
+    className="dropdown-error"
+  >
+    Error text
+  </div>
+</div>
+`;
+
+exports[`<Dropdown /> Render with empty list 1`] = `
+<div
+  className=""
+>
+  <select
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    value={undefined}
+  />
+</div>
+`;
+
+exports[`<Dropdown /> With array of strings and placeholder 1`] = `
+<div
+  className=""
+>
+  <select
+    className="form-control"
+    disabled={undefined}
+    onChange={[Function]}
+    value="-1"
+  >
+    <option
+      disabled={true}
+      value={-1}
+    >
+      Placeholder string
+    </option>
+    <option
+      disabled={false}
+      value={0}
+    >
+      one
+    </option>
+    <option
+      disabled={false}
+      value={1}
+    >
+      two
+    </option>
+    <option
+      disabled={false}
+      value={2}
+    >
+      three
+    </option>
+  </select>
+</div>
+`;
