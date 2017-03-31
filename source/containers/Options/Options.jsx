@@ -4,6 +4,7 @@ import Form from '../../components/Form/Form';
 import Input from '../../components/Input/Input';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import ContentBlock from '../../components/ContentBlock/ContentBlock';
+import ElementsList from '../../components/ElementsList/ElementsList';
 import StorageController from '../../controllers/StorageController';
 import UrlList from '../UrlList/UrlList';
 import { addUrl } from '../../model/urlList/urlListActions';
@@ -99,11 +100,14 @@ export class Options extends Component {
                 <ContentBlock>
                     <UrlList list={urlList.urls} />
                 </ContentBlock>
-                <button
-                    className='btn btn-primary'
-                    onClick={() => this.saveOptions()}>
-                    Save
-                </button>
+                <ElementsList>
+                    <button
+                        className='btn btn-primary'
+                        onClick={() => this.saveOptions()}>
+                        Save
+                    </button>
+                    <span>Saved</span>
+                </ElementsList>
             </div>
         );
     }

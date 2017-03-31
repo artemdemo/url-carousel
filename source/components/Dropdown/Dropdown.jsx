@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import './Dropdown.less';
 
 const Dropdown = (props) => {
-    const { onChange, value, placeholder, disabled, error, list = [] } = props;
+    const { className, value, placeholder, disabled, error, list = [], onChange } = props;
 
     const itemsList = (() => {
         if (placeholder) {
@@ -31,7 +31,7 @@ const Dropdown = (props) => {
         return null;
     };
 
-    const containerClass = classnames({
+    const containerClass = classnames(className, {
         'has-error': Boolean(error),
     });
 

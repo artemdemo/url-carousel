@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ElementsList> Render <ElementsList inline> 1`] = `
+<div
+  className="elements-list elements-list_inline"
+>
+  <div
+    className="elements-list-item elements-list-item_first"
+  >
+    First
+  </div>
+  <div
+    className="elements-list-item elements-list-item_last"
+  >
+    First
+  </div>
+</div>
+`;
+
+exports[`<ElementsList> Render <ElementsList> 1`] = `
+<div
+  className="elements-list"
+>
+  <div
+    className="input-container"
+  >
+    <input
+      className="form-control"
+      disabled={undefined}
+      onChange={[Function]}
+      placeholder={undefined}
+      type="text"
+      value={undefined}
+    />
+  </div>
+  <span
+    className="elements-list-item"
+  >
+    Some dropdown:
+  </span>
+  <div
+    className="elements-list-item elements-list-item_last"
+  >
+    <select
+      className="form-control"
+      disabled={undefined}
+      onChange={[Function]}
+      value={undefined}
+    >
+      <option
+        disabled={undefined}
+        value={0}
+      >
+        First item in dropdown
+      </option>
+      <option
+        disabled={undefined}
+        value={1}
+      >
+        Second item in dropdown
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`<ElementsList> Render <ElementsList> with null 1`] = `
+<div
+  className="elements-list elements-list_inline"
+>
+  <div
+    className="elements-list-item elements-list-item_first"
+  >
+    First
+  </div>
+</div>
+`;

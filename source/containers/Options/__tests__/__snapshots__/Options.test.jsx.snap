@@ -91,11 +91,20 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
       </h4>
     </div>
   </div>
-  <button
-    className="btn btn-primary"
-    onClick={[Function]}
+  <div
+    className="elements-list"
   >
-    Save
-  </button>
+    <button
+      className="btn btn-primary elements-list-item elements-list-item_first"
+      onClick={[Function]}
+    >
+      Save
+    </button>
+    <span
+      className="elements-list-item elements-list-item_last"
+    >
+      Saved
+    </span>
+  </div>
 </div>
 `;
