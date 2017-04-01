@@ -6,7 +6,7 @@ For example, after locking your computer chrome cast will stop casting of whole 
 
 ![alt tag](./source/images/url-carousel-promo.jpg)
 
-![alt tag](./source/images/url-carousel-screenshot.png)
+![alt tag](./source/images/url-carousel-screenshot.jpg)
 
 ### Getting started
 
