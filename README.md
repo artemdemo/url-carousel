@@ -4,7 +4,9 @@ Simple extension that showing websites them one by one in single tab.
 Useful when you want to use chrome cast of only one tab.
 For example, after locking your computer chrome cast will stop casting of whole desktop, but will continue to stream single tab. 
 
-![alt tag](./source/images/icon128.png)
+![alt tag](./source/images/url-carousel-promo.jpg)
+
+![alt tag](./source/images/url-carousel-screenshot.png)
 
 ### Getting started
 
