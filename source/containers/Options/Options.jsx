@@ -14,7 +14,7 @@ import { loadData, saveData } from '../../model/storage/storageActions';
 
 import './Options.less';
 
-const TIMEOUTS_LIST = ['5000', '7000', '10000'];
+const TIMEOUTS_LIST = ['5000', '7000', '10000', '20000', '30000', '40000', '60000', '70000'];
 
 export class Options extends Component {
     constructor(props) {

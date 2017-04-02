@@ -46,6 +46,36 @@ exports[`<Options> Simple render: no list, empty input 1`] = `
             >
               10000
             </option>
+            <option
+              disabled={false}
+              value={3}
+            >
+              20000
+            </option>
+            <option
+              disabled={false}
+              value={4}
+            >
+              30000
+            </option>
+            <option
+              disabled={false}
+              value={5}
+            >
+              40000
+            </option>
+            <option
+              disabled={false}
+              value={6}
+            >
+              60000
+            </option>
+            <option
+              disabled={false}
+              value={7}
+            >
+              70000
+            </option>
           </select>
         </div>
       </div>
