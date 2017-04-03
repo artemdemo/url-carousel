@@ -6,11 +6,12 @@ import StorageController from '../../controllers/StorageController';
 
 import './Carousel.less';
 
-const INTERVAL_TIMEOUT = 10000;
-const PROGRESS_STYLE = {
-    transitionDuration: `${INTERVAL_TIMEOUT}ms`,
+const DEFAULT_INTERVAL_TIMEOUT = 10000;
+
+const getProgressStyle = (timeout) => ({
+    transitionDuration: `${timeout}ms`,
     width: '100%',
-};
+});
 
 class Carousel extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class Carousel extends Component {
             this.setState({
                 currentUrl: nextProps.urlList.urls[this.urlIndex],
             });
-            this.runInterval();
+            this.runInterval(nextProps.storage.data.timeout);
         }
 
         if (this.props.status.isPlaying !== nextProps.status.isPlaying) {
@@ -48,22 +49,23 @@ class Carousel extends Component {
                     progressStyle: {},
                 });
             } else {
-                this.runInterval();
+                this.runInterval(nextProps.storage.data.timeout);
             }
         }
     }
 
-    runInterval() {
+    runInterval(timeout = DEFAULT_INTERVAL_TIMEOUT) {
         this.intervalId = setInterval(
             () => this.changeSlide(),
-            INTERVAL_TIMEOUT,
+            timeout,
         );
         this.setState({
-            progressStyle: PROGRESS_STYLE,
+            progressStyle: getProgressStyle(timeout),
         });
     }
 
     changeSlide(forward = true) {
+        const { storage } = this.props;
         const nextIndex = forward ? this.urlIndex + 1 : this.urlIndex - 1;
         this.urlIndex = (() => {
             if (forward) {
@@ -77,7 +79,7 @@ class Carousel extends Component {
         });
         setTimeout(() => {
             this.setState({
-                progressStyle: PROGRESS_STYLE,
+                progressStyle: getProgressStyle(storage.data.timeout || DEFAULT_INTERVAL_TIMEOUT),
             });
         }, 100);
     }
@@ -104,6 +106,7 @@ export default connect(
     state => ({
         urlList: state.urlList,
         status: state.status,
+        storage: state.storage,
     }),
     {
         loadData,
