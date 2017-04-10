@@ -8,7 +8,7 @@ import './Carousel.less';
 
 const DEFAULT_INTERVAL_TIMEOUT = 10000;
 
-const getProgressStyle = (timeout) => ({
+const getProgressStyle = timeout => ({
     transitionDuration: `${timeout}ms`,
     width: '100%',
 });
@@ -85,6 +85,8 @@ class Carousel extends Component {
     }
 
     render() {
+        const { storage } = this.props;
+
         return (
             <div className='url-carousel'>
                 <StorageController />
@@ -92,7 +94,7 @@ class Carousel extends Component {
                      style={this.state.progressStyle} />
                 <Controllers onSlideChange={(forward) => {
                     clearInterval(this.intervalId);
-                    this.runInterval();
+                    this.runInterval(storage.data.timeout);
                     this.changeSlide(forward);
                 }}>
                     <iframe className='url-carousel__iframe' src={this.state.currentUrl} />
